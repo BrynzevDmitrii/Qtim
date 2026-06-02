@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     '@entities': fileURLToPath(new URL('./app/entities', import.meta.url)),
     '@widgets': fileURLToPath(new URL('./app/widgets', import.meta.url)),
     '@shared': fileURLToPath(new URL('./app/shared', import.meta.url)),
+    '@lib': fileURLToPath(new URL('./app/shared/lib', import.meta.url)),
   },
 
   typescript: {
@@ -19,11 +20,8 @@ export default defineNuxtConfig({
 
   vite: {
     optimizeDeps: {
-      include: [
-        '@vue/devtools-core',
-        '@vue/devtools-kit',
-      ]
-    }
+      include: ['@vue/devtools-core', '@vue/devtools-kit'],
+    },
   },
 
   modules: ['@nuxt/image'],

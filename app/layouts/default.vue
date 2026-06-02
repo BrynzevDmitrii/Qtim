@@ -17,6 +17,6 @@ import Footer from '@widgets/footer/Footer.vue';
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex: 1
+  flex: 1;
 }
 </style>

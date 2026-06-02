@@ -1,6 +1,5 @@
 <template>
   <div class="blog-module">
-
     <div v-if="loading" class="blog-module__loading">Загрузка...</div>
 
     <template v-else>
@@ -8,17 +7,21 @@
         <PostCard v-for="post in paginatedPosts" :key="post.id" :post="post" />
       </div>
 
-      <Pagination :current-page="currentPage" :total-pages="totalPages" @update:page="currentPage = $event" />
+      <Pagination
+        :current-page="currentPage"
+        :total-pages="totalPages"
+        @update:page="currentPage = $event"
+      />
     </template>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue';
-import PostCard from '@shared/ui/PostCard.vue';
+import { PostCard } from '@entities/post';
 import Pagination from '@shared/ui/Pagination.vue';
-import { usePosts } from '@shared/composables/usePosts';
-import type { PostsResponse } from '@shared/types/post';
+import { usePosts } from '@shared/lib/composables/usePosts';
+import type { PostsResponse } from '@shared/types';
 
 const POSTS_PER_PAGE = 8;
 

@@ -1,33 +1,47 @@
 <template>
   <div class="pagination">
-    <button v-if="count > 1" class="pagination__btn pagination__navigation-btn"
-      @click="$emit('update:page', props.currentPage - 1)">
-      <NuxtImg class="pagination__btn-prev" src="./icons/right-arrow.svg" alt="left-arrow" width="5" height="10" />
+    <button
+      v-if="count > 1"
+      class="pagination__btn pagination__navigation-btn"
+      @click="$emit('update:page', props.currentPage - 1)"
+    >
+      <NuxtImg
+        class="pagination__btn-prev"
+        src="./icons/right-arrow.svg"
+        alt="left-arrow"
+        width="5"
+        height="10"
+      />
     </button>
     <div class="pagination">
-      <button :class="['pagination__btn', { 'pagination__btn--active': i === props.currentPage }]"
-        v-for="i in qertyPagination" :key="i" @click="$emit('update:page', i)">{{ i
-        }}</button>
+      <button
+        :class="['pagination__btn', { 'pagination__btn--active': i === props.currentPage }]"
+        v-for="i in qertyPagination"
+        :key="i"
+        @click="$emit('update:page', i)"
+      >
+        {{ i }}
+      </button>
     </div>
-    <button v-if="props.currentPage < props.totalPages" class="pagination__btn pagination__navigation-btn"
-      :disabled="props.currentPage >= props.totalPages" @click="$emit('update:page', props.currentPage + 1)">
+    <button
+      v-if="props.currentPage < props.totalPages"
+      class="pagination__btn pagination__navigation-btn"
+      :disabled="props.currentPage >= props.totalPages"
+      @click="$emit('update:page', props.currentPage + 1)"
+    >
       <NuxtImg src="./icons/right-arrow.svg" alt="right-arrow" width="5" height="10" />
     </button>
   </div>
 </template>
 
 <script setup lang="ts">
-
 interface Props {
   currentPage: number;
   totalPages: number;
 }
-
+const props = defineProps<Props>();
 const COUNT_SECTION_PAGINATIONS = 5;
 let count = ref(1);
-
-
-const props = defineProps<Props>();
 
 const qertyPagination = computed(() => {
   if (props.totalPages > COUNT_SECTION_PAGINATIONS) {
@@ -40,9 +54,12 @@ const qertyPagination = computed(() => {
   }
 });
 
-watch(() => props.currentPage, (newPage) => {
-  count.value = Math.ceil(newPage / COUNT_SECTION_PAGINATIONS);
-});
+watch(
+  () => props.currentPage,
+  (newPage) => {
+    count.value = Math.ceil(newPage / COUNT_SECTION_PAGINATIONS);
+  },
+);
 
 defineEmits<{
   'update:page': [page: number];

@@ -3,5 +3,5 @@
 </template>
 
 <script setup lang="ts">
-import BlogModule from '@widgets/blog-module/BlogModule.vue';
+import { BlogModule } from '@features/blog-module';
 </script>

@@ -7,7 +7,6 @@ export interface Post {
   title: string;
 }
 
-
 export interface PostsResponse {
   data: Post[];
 }

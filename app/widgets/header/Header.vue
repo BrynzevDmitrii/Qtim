@@ -1,30 +1,30 @@
 <template>
-    <header class="header">
-        <div class="header-left">
-            <NuxtLink to="/" class="logo">QTIM</NuxtLink>
+  <header class="header">
+    <div class="header-left">
+      <NuxtLink to="/" class="logo">QTIM</NuxtLink>
+    </div>
+
+    <div class="header-right">
+      <div v-if="isMobile">
+        <div v-if="!isMenuOpen" class="header-burger" @click="toggleMenu">
+          <span></span>
         </div>
+      </div>
 
-        <div class="header-right">
-            <div v-if="isMobile">
-                <div v-if="!isMenuOpen" class="header-burger" @click="toggleMenu">
-                    <span></span>
-                </div>
-            </div>
+      <template v-else>
+        <nav class="nav">
+          <div class="nav-item">Works</div>
+          <div class="nav-item">About</div>
+        </nav>
+        <button class="language-switcher" aria-label="Switch language">
+          <NuxtImg src="./icons/uk.svg" alt="English" width="24" height="24" />
+        </button>
+        <button class="btn-primary">Let's work</button>
+      </template>
+    </div>
+  </header>
 
-            <template v-else>
-                <nav class="nav">
-                    <div class="nav-item">Works</div>
-                    <div class="nav-item">About</div>
-                </nav>
-                <button class="language-switcher" aria-label="Switch language">
-                    <NuxtImg src="./icons/uk.svg" alt="English" width="24" height="24" />
-                </button>
-                <button class="btn-primary">Let's work</button>
-            </template>
-        </div>
-    </header>
-
-    <BurgerMenu v-if="isMenuOpen" @close="isMenuOpen = false" :open="isMenuOpen" />
+  <BurgerMenu v-if="isMenuOpen" @close="isMenuOpen = false" :open="isMenuOpen" />
 </template>
 
 <script setup lang="ts">
@@ -34,149 +34,146 @@ import BurgerMenu from './Burger.vue';
 const isMobile = ref(false);
 const isMenuOpen = ref(false);
 const toggleMenu = () => {
-    isMenuOpen.value = !isMenuOpen.value;
+  isMenuOpen.value = !isMenuOpen.value;
 };
 
 onMounted(() => {
-    isMobile.value = window.innerWidth <= 768;
+  isMobile.value = window.innerWidth <= 768;
 });
-
 </script>
 
 <style scoped lang="scss">
 .header {
-    width: 100%;
-    height: 121px;
-    margin: 0 auto;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 60px;
+  width: 100%;
+  height: 121px;
+  margin: 0 auto;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
 }
 
 .header-left {
-    display: flex;
-    align-items: center;
-    gap: 32px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
 }
 
 .logo {
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: #111;
-    text-decoration: none;
-    transition: opacity 0.2s;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #111;
+  text-decoration: none;
+  transition: opacity 0.2s;
 }
 
-
 .nav {
-    display: flex;
-    gap: 48px;
-    align-items: center;
+  display: flex;
+  gap: 48px;
+  align-items: center;
 }
 
 .nav-item {
-    font-size: 18px;
-    font-weight: 500;
-    color: #1a1a1a;
-    text-decoration: none;
-    transition: color 0.2s;
+  font-size: 18px;
+  font-weight: 500;
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: color 0.2s;
 }
 
 .nav-item:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .header-right {
-    display: flex;
-    align-items: center;
-    gap: 32px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
 }
 
 .header-burger {
-    display: none;
+  display: none;
 }
 
 .btn-primary {
-    background: #000;
-    color: #fff;
-    border: none;
-    padding: 12px 28px;
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: 40px;
-    cursor: pointer;
-    white-space: nowrap;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 40px;
+  cursor: pointer;
+  white-space: nowrap;
 }
 
 .btn-primary:hover {
-    background: #2c2c2c;
+  background: #2c2c2c;
 }
 
 .language-switcher {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background: white;
-    border: 2px solid rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Адаптивность */
 @media (max-width: 768px) {
-    .header {
-        padding: 0 30px;
-        height: auto;
-        min-height: 90px;
-        flex-wrap: wrap;
-        gap: 16px;
-        padding-top: 16px;
-        padding-bottom: 16px;
-    }
+  .header {
+    padding: 0 30px;
+    height: auto;
+    min-height: 90px;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
 
-    .header-left {
-        gap: 24px;
-    }
+  .header-left {
+    gap: 24px;
+  }
 
-    .header-burger {
-        display: block;
-        width: 24px;
-        height: 18px;
-        position: relative;
-        cursor: pointer;
-    }
+  .header-burger {
+    display: block;
+    width: 24px;
+    height: 18px;
+    position: relative;
+    cursor: pointer;
+  }
 
-    .header-burger::before,
-    .header-burger::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: #000;
-    }
+  .header-burger::before,
+  .header-burger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+  }
 
-    .header-burger::before {
-        top: 0;
-    }
+  .header-burger::before {
+    top: 0;
+  }
 
-    .header-burger::after {
-        bottom: 0;
-    }
+  .header-burger::after {
+    bottom: 0;
+  }
 
-    .header-burger span {
-        position: absolute;
-        top: 9px;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: #000;
-    }
+  .header-burger span {
+    position: absolute;
+    top: 9px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+  }
 }
 </style>

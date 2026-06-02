@@ -2,7 +2,13 @@
   <div class="post-card" @mouseenter="isHovered = true" @mouseleave="isHovered = false">
     <NuxtLink :to="`/post/${post.id}`" class="post-card__link">
       <div class="post-card__image-wrap">
-        <NuxtImg src="./images/office.png" :alt="post.title" class="post-card__image" width="280" height="280" />
+        <NuxtImg
+          src="./images/office.png"
+          :alt="post.title"
+          class="post-card__image"
+          width="280"
+          height="280"
+        />
       </div>
 
       <div class="post-card__body">
@@ -17,7 +23,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import type { Post } from '@shared/types/post';
+import type { Post } from '@shared/types';
 
 interface Props {
   post: Post;
@@ -38,7 +44,9 @@ const isHovered = ref(false);
   overflow: hidden;
   min-height: 420px;
   cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .post-card:hover {
@@ -57,7 +65,6 @@ const isHovered = ref(false);
   flex-direction: column;
   padding: 24px 16px 36px 0;
   position: relative;
-
 }
 
 .post-card__content {
@@ -85,7 +92,9 @@ const isHovered = ref(false);
   opacity: 0;
   visibility: hidden;
   transform: translateY(8px);
-  transition: opacity 0.18s ease, transform 0.18s ease;
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
   color: rgba(226, 190, 255, 1);
   font-weight: 600;
   pointer-events: none;

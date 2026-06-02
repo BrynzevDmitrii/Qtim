@@ -4,13 +4,18 @@
     <template v-else>
       <div class="post-detail__article">
         <div class="post-detail__title">{{ post?.title }}</div>
-        <NuxtImg src="./images/bike.png" alt="Arcticule-image" class="post-detail__image" width="1216" height="700" />
+        <NuxtImg
+          src="./images/bike.png"
+          alt="Arcticule-image"
+          class="post-detail__image"
+          width="1216"
+          height="700"
+        />
         <div class="post-detail__description">
           <p class="post-detail__about">About</p>
           <p class="post-detail__content">{{ post?.description }}</p>
         </div>
       </div>
-
     </template>
   </div>
 </template>
@@ -18,8 +23,8 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
-import { usePosts } from '@shared/composables/usePosts';
-import type { Post } from '@shared/types/post';
+import { usePosts } from '@shared/lib/composables/usePosts';
+import type { Post } from '@shared/types';
 
 const route = useRoute();
 
@@ -27,7 +32,6 @@ const { fetchPostById } = usePosts();
 
 const post = ref<Post | null>(null);
 const loading = ref(true);
-
 
 onMounted(async () => {
   try {
