@@ -3,6 +3,7 @@
     <div v-if="loading" class="blog-module__loading">Загрузка...</div>
 
     <template v-else>
+      <h1 class="blog-module__title">Arcticule</h1>
       <div class="blog-module__posts">
         <PostCard v-for="post in paginatedPosts" :key="post.id" :post="post" />
       </div>
@@ -49,16 +50,16 @@ onMounted(async () => {
 </script>
 
 <style scoped>
+@import "@/styles/colors.scss";
 .blog-module {
   max-width: 1220px;
   margin: 0 auto;
 }
 
 .blog-module__title {
-  font-size: 32px;
-  font-weight: 700;
-  margin: 0 0 24px 0;
-  color: #333;
+  font-size: 84px;
+  font-weight: 400;
+  color: var(--color-black);
 }
 
 .blog-module__loading {

@@ -43,15 +43,16 @@ onMounted(() => {
 </script>
 
 <style scoped lang="scss">
+@import "@/styles/colors.scss";
 .header {
   width: 100%;
   height: 121px;
   margin: 0 auto;
-  background: #ffffff;
+  background: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 60px;
+  padding: 0 40px;
 }
 
 .header-left {
@@ -64,9 +65,8 @@ onMounted(() => {
   font-size: 28px;
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: #111;
+  color: var(--color-black);
   text-decoration: none;
-  transition: opacity 0.2s;
 }
 
 .nav {
@@ -78,9 +78,8 @@ onMounted(() => {
 .nav-item {
   font-size: 18px;
   font-weight: 500;
-  color: #1a1a1a;
+  color: var(--color-black);
   text-decoration: none;
-  transition: color 0.2s;
 }
 
 .nav-item:hover {
@@ -98,8 +97,8 @@ onMounted(() => {
 }
 
 .btn-primary {
-  background: #000;
-  color: #fff;
+  background: var(--color-black);
+  color: var(--color-white);
   border: none;
   padding: 12px 28px;
   font-size: 16px;
@@ -107,10 +106,6 @@ onMounted(() => {
   border-radius: 40px;
   cursor: pointer;
   white-space: nowrap;
-}
-
-.btn-primary:hover {
-  background: #2c2c2c;
 }
 
 .language-switcher {
@@ -125,7 +120,6 @@ onMounted(() => {
   justify-content: center;
 }
 
-/* Адаптивность */
 @media (max-width: 768px) {
   .header {
     padding: 0 30px;
@@ -156,7 +150,7 @@ onMounted(() => {
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: #000;
+    background-color: var(--color-black);
   }
 
   .header-burger::before {
@@ -173,7 +167,7 @@ onMounted(() => {
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: #000;
+    background-color: var(--color-black);
   }
 }
 </style>

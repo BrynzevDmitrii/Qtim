@@ -1,6 +1,5 @@
 <template>
   <div class="page-home">
-    <h1 class="page-home__title">Arcticule</h1>
     <BlogModule />
   </div>
 </template>

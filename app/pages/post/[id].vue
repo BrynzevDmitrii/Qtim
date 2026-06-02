@@ -48,6 +48,7 @@ definePageMeta({
 </script>
 
 <style scoped>
+@import "@/styles/colors.scss";
 .post-detail {
   max-width: 1220px;
   margin: 0 auto;
@@ -65,7 +66,7 @@ definePageMeta({
   margin-bottom: 73px;
   font-size: 84px;
   font-weight: 400;
-  color: rgba(16, 16, 16, 1);
+  color: var(--color-black);
   width: 100%;
 }
 
@@ -87,14 +88,14 @@ definePageMeta({
 .post-detail__about {
   font-size: 16px;
   font-weight: 400;
-  color: rgba(16, 16, 16, 1);
+  color: var(--color-black);
 }
 
 .post-detail__content {
   max-width: 695px;
   font-size: 36px;
   font-weight: 400;
-  color: rgba(16, 16, 16, 1);
+  color: var(--color-black);
   line-height: 150%;
 }
 

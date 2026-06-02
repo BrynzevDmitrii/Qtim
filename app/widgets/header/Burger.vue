@@ -21,6 +21,7 @@ defineEmits(['close']);
 </script>
 
 <style scoped lang="scss">
+@import "@/styles/colors.scss";
 .burger {
   position: fixed;
   top: 0;
@@ -51,7 +52,7 @@ defineEmits(['close']);
   &__btn-primary {
     padding: 10px 20px;
     background-color: #007bff;
-    color: #fff;
+    color: var(--color-white);
     border: none;
     border-radius: 4px;
     cursor: pointer;

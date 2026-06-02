@@ -74,8 +74,9 @@ const privaces = [
 </script>
 
 <style scoped lang="scss">
+@import "@/styles/colors.scss";
 .footer {
-  background: #e2befe;
+  background: var(--color-lilac);
   padding: 140px 0 0;
 }
 
@@ -97,7 +98,7 @@ const privaces = [
   font-size: 16px;
   font-weight: 400;
   line-height: 1.8;
-  color: rgba(16, 16, 16, 1);
+  color: var(--color-black);
 }
 
 .footer-content__lets-work h2 {
@@ -105,7 +106,7 @@ const privaces = [
   font-size: 112px;
   font-weight: 400;
   text-decoration: underline;
-  color: rgba(16, 16, 16, 1);
+  color: var(--color-black);
   text-underline-position: from-font;
   text-decoration-thickness: 1px;
 }
@@ -128,7 +129,7 @@ const privaces = [
   margin: 0;
   font-weight: 400;
   font-size: 16px;
-  color: rgba(16, 16, 16, 1);
+  color: var(--color-black);
 }
 
 .footer-content__contacts-info a,
@@ -136,7 +137,7 @@ const privaces = [
   display: block;
   font-size: 0.95rem;
   line-height: 1.8;
-  color: rgba(16, 16, 16, 1);
+  color: var(--color-black);
 }
 
 .footer-content__bottom {

@@ -67,6 +67,7 @@ defineEmits<{
 </script>
 
 <style scoped>
+@import "@/styles/colors.scss";
 .pagination {
   display: flex;
   justify-content: flex-start;
@@ -84,7 +85,7 @@ defineEmits<{
   height: 44px;
   border-radius: 8px;
   background: rgba(243, 243, 243, 1);
-  color: rgba(16, 16, 16, 1);
+  color: var(--color-black);
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
@@ -92,13 +93,13 @@ defineEmits<{
 }
 
 .pagination__btn--active {
-  background: rgba(16, 16, 16, 1);
+  background: var(--color-black);
   color: rgba(255, 255, 255, 1);
 }
 
 .pagination__btn:hover:not(:disabled) {
   background: rgba(232, 232, 232, 1);
-  color: rgba(16, 16, 16, 1);
+  color: var(--color-black);
 }
 
 .pagination__btn:disabled {

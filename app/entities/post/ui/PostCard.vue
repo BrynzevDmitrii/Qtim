@@ -35,11 +35,12 @@ const isHovered = ref(false);
 </script>
 
 <style scoped>
+@import "@/styles/colors.scss";
 .post-card {
   display: flex;
   max-width: 280px;
   flex-direction: column;
-  background: #fff;
+  background: var(--color-white);
   margin-top: 8px;
   overflow: hidden;
   min-height: 420px;
@@ -50,12 +51,13 @@ const isHovered = ref(false);
 }
 
 .post-card:hover {
-  transform: translateY(-14px);
+  transform: translateY(-20px);
 }
 
 .post-card__image-wrap {
   width: 100%;
   min-height: 200px;
+  height: 280px;
   overflow: hidden;
   position: relative;
 }
@@ -77,7 +79,7 @@ const isHovered = ref(false);
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: 1.7;
-  color: #545454;
+  color: var(--color-black);
 }
 
 .post-card__link {
@@ -95,7 +97,7 @@ const isHovered = ref(false);
   transition:
     opacity 0.18s ease,
     transform 0.18s ease;
-  color: rgba(226, 190, 255, 1);
+  color: var(--color-lilac);
   font-weight: 600;
   pointer-events: none;
 }
