@@ -1,0 +1,56 @@
+@use './colors.scss' as *;
+@use './font.scss' as *;
+
+:root {
+    font-family: $font-sans;
+    color: var(--color-black-strong);
+    background: var(--color-white);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--color-white);
+    color: var(--color-black-strong);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-sans;
+    color: var(--color-black);
+    margin: 0;
+}
+
+p {
+    margin: 0;
+    color: var(--color-gray);
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+    border: none;
+}
+
+ul,
+ol,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    list-style-type: none;
+}
