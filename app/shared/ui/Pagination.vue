@@ -1,7 +1,7 @@
 <template>
   <div class="pagination">
-    <button v-if="props.currentPage > 1" class="pagination__btn"
-      @click="$emit('update:page', props.currentPage - COUNT_SECTION_PAGINATIONS)">
+    <button v-if="count > 1" class="pagination__btn pagination__navigation-btn"
+      @click="$emit('update:page', props.currentPage - 1)">
       <NuxtImg class="pagination__btn-prev" src="./icons/right-arrow.svg" alt="left-arrow" width="5" height="10" />
     </button>
     <div class="pagination">
@@ -9,9 +9,8 @@
         v-for="i in qertyPagination" :key="i" @click="$emit('update:page', i)">{{ i
         }}</button>
     </div>
-    <button v-if="props.currentPage < props.totalPages" class="pagination__btn"
-      :disabled="props.currentPage >= props.totalPages"
-      @click="$emit('update:page', props.currentPage + COUNT_SECTION_PAGINATIONS)">
+    <button v-if="props.currentPage < props.totalPages" class="pagination__btn pagination__navigation-btn"
+      :disabled="props.currentPage >= props.totalPages" @click="$emit('update:page', props.currentPage + 1)">
       <NuxtImg src="./icons/right-arrow.svg" alt="right-arrow" width="5" height="10" />
     </button>
   </div>
@@ -88,6 +87,11 @@ defineEmits<{
 .pagination__btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+.pagination__navigation-btn {
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(243, 243, 243, 1);
 }
 
 .pagination__btn-prev {

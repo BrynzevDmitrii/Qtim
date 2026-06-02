@@ -1,12 +1,12 @@
 <template>
   <div class="post-card" @mouseenter="isHovered = true" @mouseleave="isHovered = false">
-    <NuxtLink :to="`/blog/${post.id}`" class="post-card__link">
+    <NuxtLink :to="`/post/${post.id}`" class="post-card__link">
       <div class="post-card__image-wrap">
         <NuxtImg src="./images/office.png" :alt="post.title" class="post-card__image" width="280" height="280" />
       </div>
 
       <div class="post-card__body">
-        <p class="post-card__content">{{ post.description }}</p>
+        <p class="post-card__content">{{ post.preview }}</p>
         <div class="post-card__read-more" :class="{ 'post-card__read-more--visible': isHovered }">
           Read more
         </div>

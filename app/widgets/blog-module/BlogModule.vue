@@ -30,8 +30,9 @@ const currentPage = ref(1);
 const totalPages = computed(() => Math.ceil(posts.value.data.length / POSTS_PER_PAGE));
 
 const paginatedPosts = computed(() => {
-  const start = (currentPage.value - 1) * POSTS_PER_PAGE;
+  const start = currentPage.value - 1;
   const end = start + POSTS_PER_PAGE;
+  if (end > posts.value.data.length) return posts.value.data.slice(start);
   return posts.value.data.slice(start, end);
 });
 
@@ -69,5 +70,13 @@ onMounted(async () => {
   flex-wrap: wrap;
   gap: 32px;
   margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .blog-module__posts {
+    gap: 24px;
+    justify-content: center;
+    flex-direction: column;
+  }
 }
 </style>

@@ -5,8 +5,10 @@
         </div>
 
         <div class="header-right">
-            <div v-if="isMobile" class="header-burger" @click="toggleMenu">
-                <span></span>
+            <div v-if="isMobile">
+                <div v-if="!isMenuOpen" class="header-burger" @click="toggleMenu">
+                    <span></span>
+                </div>
             </div>
 
             <template v-else>

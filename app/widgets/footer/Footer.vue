@@ -14,12 +14,12 @@
                 <div class="footer-content__contacts-info">
                     <p>Office in Russia</p>
                     <div class="footer-content__contacts-info-address">{{ address }}</div>
-                    <NuxtImg src="./icons/location-icon.svg" alt="English" width="24" height="24" />
+                    <NuxtImg src="./icons/location-icon.svg" alt="English" width="32" height="32" />
                 </div>
                 <div class="footer-content__contacts-info">
                     <p>Office in Dubai</p>
                     <div class="footer-content__contacts-info-address">{{ address }}</div>
-                    <NuxtImg src="./icons/location-icon.svg" alt="English" width="24" height="24" />
+                    <NuxtImg src="./icons/location-icon.svg" alt="English" width="32" height="32" />
                 </div>
             </div>
             <div class="footer-content__bottom">
@@ -68,8 +68,7 @@ const privaces = [
 <style scoped lang="scss">
 .footer {
     background: #e2befe;
-    color: #111;
-    padding: 80px 0 0;
+    padding: 140px 0 0;
 }
 
 .footer-content {
@@ -82,43 +81,46 @@ const privaces = [
 }
 
 .footer-content__lets-work {
-    flex: 1 1 55%;
-    min-width: 360px;
-    max-width: 760px;
+    max-width: 495px;
 }
 
 .footer-content__lets-work p {
     margin: 0;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.22em;
-    opacity: 0.75;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: rgba(16, 16, 16, 1);
 }
 
 .footer-content__lets-work h2 {
-    margin: 24px 0 0;
-    font-size: clamp(4rem, 6vw, 6.8rem);
-    line-height: 0.95;
-    font-weight: 800;
+    margin: 56px 0 0;
+    font-size: 112px;
+    font-weight: 400;
+    text-decoration: underline;
+    color: rgba(16, 16, 16, 1);
+    text-underline-position: from-font;
+    text-decoration-thickness: 1px;
 }
 
 .footer-content__contacts {
-    flex: 0 0 360px;
+    margin-top: 54px;
+    flex: 0 0 152px;
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 36px;
 }
 
 .footer-content__contacts-info {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
 .footer-content__contacts-info p {
     margin: 0;
-    font-weight: 700;
-    font-size: 0.95rem;
+    font-weight: 400;
+    font-size: 16px;
+    color: rgba(16, 16, 16, 1);
 }
 
 .footer-content__contacts-info a,
@@ -126,11 +128,7 @@ const privaces = [
     display: block;
     font-size: 0.95rem;
     line-height: 1.8;
-    color: rgba(17, 17, 17, 0.85);
-}
-
-.footer-content__contacts-info-address {
-    margin-top: 0.25rem;
+    color: rgba(16, 16, 16, 1);
 }
 
 .footer-content__bottom {
@@ -150,6 +148,10 @@ const privaces = [
     gap: 32px;
     justify-content: center;
     margin-bottom: 30px;
+    text-decoration: underline;
+    text-underline-position: under;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 .footer-content__bottom-social-link {
@@ -157,7 +159,6 @@ const privaces = [
     align-items: center;
     justify-content: center;
     color: rgba(17, 17, 17, 0.85);
-    text-decoration: none;
     font-size: 0.92rem;
     transition: color 0.2s, opacity 0.2s;
 }
@@ -183,25 +184,11 @@ const privaces = [
     letter-spacing: 0.08em;
     text-transform: uppercase;
     pointer-events: none;
-    bottom: 24px;
+    bottom: 30px;
 }
 
-@media (max-width: 1024px) {
-    .footer-content {
-        flex-direction: column;
-        align-items: stretch;
-    }
 
-    .footer-content__contacts {
-        flex: 1 1 auto;
-    }
-
-    .footer-content__bottom {
-        justify-content: center;
-    }
-}
-
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     .footer {
         padding: 48px 20px 24px;
     }
@@ -218,11 +205,11 @@ const privaces = [
     .footer-content__bottom-social,
     .footer-content__bottom-privaces {
         gap: 16px;
+        justify-content: flex-start;
     }
 
     .footer-content__bottom-go {
-        width: 280px;
-        height: 140px;
+        display: none;
     }
 }
 </style>

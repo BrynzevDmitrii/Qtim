@@ -4,7 +4,7 @@
         <div class="burger__item">Works</div>
         <div class="burger__item">About</div>
         <div class="burger__language-switcher">
-            <NuxtImg src="./images/icons/uk.svg" alt="English" width="24" height="24" />
+            <NuxtImg src="./icons/uk.svg" alt="English" width="24" height="24" />
         </div>
         <button class="burger__btn-primary">Let's work</button>
     </div>
@@ -12,15 +12,15 @@
 <script setup lang="ts">
 const props = defineProps({
     open: {
-    type: Boolean,
-    default: false,
+        type: Boolean,
+        default: false,
     },
 });
 
 defineEmits(['close']);
 </script>
 
-<style scoped lang="scss">  
+<style scoped lang="scss">
 .burger {
     position: fixed;
     top: 0;
@@ -34,7 +34,8 @@ defineEmits(['close']);
     z-index: 1000;
 
     &--open {
-    transform: translateX(0);
+        transform: translateX(0);
+        opacity: 0.9;
     }
 
     &__item {
