@@ -1,6 +1,6 @@
 <template>
   <div class="post-detail">
-    <div v-if="loading" class="post-detail__loading">Loading...</div>
+    <div v-if="loading" class="post-detail__loading"><PageSkeleton /></div>
     <template v-else>
       <div class="post-detail__article">
         <div class="post-detail__title">{{ post?.title }}</div>
@@ -24,6 +24,7 @@
 import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { usePosts } from '@shared/lib/composables/usePosts';
+import PageSkeleton from '@entities/skeletons/ui/PageSkeleton.vue';
 import type { Post } from '@shared/types';
 
 const route = useRoute();
@@ -48,7 +49,7 @@ definePageMeta({
 </script>
 
 <style scoped>
-@import "@/styles/colors.scss";
+@import '@/styles/colors.scss';
 .post-detail {
   max-width: 1220px;
   margin: 0 auto;

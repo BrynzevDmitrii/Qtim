@@ -35,7 +35,7 @@ const isHovered = ref(false);
 </script>
 
 <style scoped>
-@import "@/styles/colors.scss";
+@import '@/styles/colors.scss';
 .post-card {
   display: flex;
   max-width: 280px;

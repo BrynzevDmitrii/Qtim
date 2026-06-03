@@ -43,7 +43,7 @@ onMounted(() => {
 </script>
 
 <style scoped lang="scss">
-@import "@/styles/colors.scss";
+@use '@/styles/colors.scss';
 .header {
   width: 100%;
   height: 121px;

@@ -74,7 +74,7 @@ const privaces = [
 </script>
 
 <style scoped lang="scss">
-@import "@/styles/colors.scss";
+@use '@/styles/colors.scss';
 .footer {
   background: var(--color-lilac);
   padding: 140px 0 0;

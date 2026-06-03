@@ -1,6 +1,6 @@
 <template>
   <div class="blog-module">
-    <div v-if="loading" class="blog-module__loading">Загрузка...</div>
+    <div v-if="loading" class="blog-module__loading"><BlogSkeleton /></div>
 
     <template v-else>
       <h1 class="blog-module__title">Arcticule</h1>
@@ -21,6 +21,7 @@
 import { ref, computed, onMounted } from 'vue';
 import { PostCard } from '@entities/post';
 import Pagination from '@shared/ui/Pagination.vue';
+import BlogSkeleton from '@entities/skeletons/ui/BlogSkeleton.vue';
 import { usePosts } from '@shared/lib/composables/usePosts';
 import type { PostsResponse } from '@shared/types';
 
@@ -50,7 +51,7 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-@import "@/styles/colors.scss";
+@import '@/styles/colors.scss';
 .blog-module {
   max-width: 1220px;
   margin: 0 auto;
@@ -66,7 +67,9 @@ onMounted(async () => {
   text-align: center;
   padding: 40px 20px;
   font-size: 16px;
-  color: #999;
+  height: 1330px;
+  display: flex;
+  align-items: center;
 }
 
 .blog-module__posts {

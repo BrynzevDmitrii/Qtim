@@ -21,7 +21,7 @@ defineEmits(['close']);
 </script>
 
 <style scoped lang="scss">
-@import "@/styles/colors.scss";
+@use '@/styles/colors.scss';
 .burger {
   position: fixed;
   top: 0;
